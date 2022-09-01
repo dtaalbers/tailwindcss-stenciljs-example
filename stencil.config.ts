@@ -1,8 +1,8 @@
 import { Config } from '@stencil/core';
-import { postcss } from '@stencil/postcss';
 import { sass } from '@stencil/sass';
-import autoprefixer from 'autoprefixer';
 import nodePolyfills from 'rollup-plugin-node-polyfills';
+import tailwind from 'stencil-tailwind-plugin';
+import cfg from './tailwind.config';
 
 export const config: Config = {
   globalStyle: 'src/theme/main.scss',
@@ -32,21 +32,9 @@ export const config: Config = {
   },
   plugins: [
     sass(),
-    postcss({
-      plugins: [
-        require('postcss-import'),
-        require('tailwindcss')('./tailwind.config.js'),
-        autoprefixer(),
-        ...(process.env.NODE_ENV === 'production'
-          ? [
-              require('@fullhuman/postcss-purgecss')({
-                content: ['./src/**/*.tsx', './src/**/*.scss', './src/index.html'],
-                defaultExtractor: (content: any) => content.match(/[A-Za-z0-9-_:/]+/g) || [],
-              }),
-              require('cssnano'),
-            ]
-          : []),
-      ],
+    tailwind({
+      tailwindCssPath: './src/theme/main.scss',
+      tailwindConf: cfg,
     }),
   ],
 };
