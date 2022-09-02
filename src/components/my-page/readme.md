@@ -7,15 +7,15 @@
 
 ## Dependencies
 
-### Used by
+### Depends on
 
- - [my-page](../my-page)
+- [my-component](../my-component)
 
 ### Graph
 ```mermaid
 graph TD;
   my-page --> my-component
-  style my-component fill:#f9f,stroke:#333,stroke-width:4px
+  style my-page fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
 ----------------------------------------------

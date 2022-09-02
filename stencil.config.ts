@@ -1,7 +1,7 @@
 import { Config } from '@stencil/core';
 import { sass } from '@stencil/sass';
 import nodePolyfills from 'rollup-plugin-node-polyfills';
-import tailwind from 'stencil-tailwind-plugin';
+import tailwind, { tailwindHMR } from 'stencil-tailwind-plugin';
 import cfg from './tailwind.config';
 
 export const config: Config = {
@@ -36,5 +36,6 @@ export const config: Config = {
       tailwindCssPath: './src/theme/main.scss',
       tailwindConf: cfg,
     }),
+    tailwindHMR(),
   ],
 };

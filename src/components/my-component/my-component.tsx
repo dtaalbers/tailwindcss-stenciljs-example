@@ -7,8 +7,8 @@ import { Component, h } from '@stencil/core';
 export class MyComponent {
   render() {
     return (
-      <div class="bg-red-400 rounded-sm flex justify-center items-center w-36 h-[100px]">
-        <p class="text-red-900">Hello, World!</p>
+      <div class="bg-purple-200 rounded flex justify-center items-center w-36 h-[100px]">
+        <p class="text-gray-800">Hello world!</p>
       </div>
     );
   }

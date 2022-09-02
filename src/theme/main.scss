@@ -3,6 +3,14 @@
 @tailwind utilities;
 
 html {
-  @apply bg-gray-100;
+  @apply bg-pink-200;
   @apply h-full;
+  @apply p-5;
+}
+
+body {
+  @apply bg-yellow-200;
+  @apply h-full;
+  @apply p-5;
+  @apply rounded;
 }
