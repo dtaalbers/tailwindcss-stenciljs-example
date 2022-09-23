@@ -6,12 +6,20 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface ComponentWithoutTwClasses {
+    }
     interface MyComponent {
     }
     interface MyPage {
     }
 }
 declare global {
+    interface HTMLComponentWithoutTwClassesElement extends Components.ComponentWithoutTwClasses, HTMLStencilElement {
+    }
+    var HTMLComponentWithoutTwClassesElement: {
+        prototype: HTMLComponentWithoutTwClassesElement;
+        new (): HTMLComponentWithoutTwClassesElement;
+    };
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
     }
     var HTMLMyComponentElement: {
@@ -25,16 +33,20 @@ declare global {
         new (): HTMLMyPageElement;
     };
     interface HTMLElementTagNameMap {
+        "component-without-tw-classes": HTMLComponentWithoutTwClassesElement;
         "my-component": HTMLMyComponentElement;
         "my-page": HTMLMyPageElement;
     }
 }
 declare namespace LocalJSX {
+    interface ComponentWithoutTwClasses {
+    }
     interface MyComponent {
     }
     interface MyPage {
     }
     interface IntrinsicElements {
+        "component-without-tw-classes": ComponentWithoutTwClasses;
         "my-component": MyComponent;
         "my-page": MyPage;
     }
@@ -43,6 +55,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "component-without-tw-classes": LocalJSX.ComponentWithoutTwClasses & JSXBase.HTMLAttributes<HTMLComponentWithoutTwClassesElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
             "my-page": LocalJSX.MyPage & JSXBase.HTMLAttributes<HTMLMyPageElement>;
         }
