@@ -7,8 +7,10 @@ import { Component, h } from '@stencil/core';
 export class MyPage {
   render() {
     return (
-      <div class="flex h-full w-full justify-center items-center">
+      <div class="flex h-full w-full flex-col justify-center items-center">
         <my-component></my-component>
+        <my-second-component></my-second-component>
+        <my-third-component></my-third-component>
       </div>
     );
   }

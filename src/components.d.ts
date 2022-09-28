@@ -12,6 +12,10 @@ export namespace Components {
     }
     interface MyPage {
     }
+    interface MySecondComponent {
+    }
+    interface MyThirdComponent {
+    }
 }
 declare global {
     interface HTMLComponentWithoutTwClassesElement extends Components.ComponentWithoutTwClasses, HTMLStencilElement {
@@ -32,10 +36,24 @@ declare global {
         prototype: HTMLMyPageElement;
         new (): HTMLMyPageElement;
     };
+    interface HTMLMySecondComponentElement extends Components.MySecondComponent, HTMLStencilElement {
+    }
+    var HTMLMySecondComponentElement: {
+        prototype: HTMLMySecondComponentElement;
+        new (): HTMLMySecondComponentElement;
+    };
+    interface HTMLMyThirdComponentElement extends Components.MyThirdComponent, HTMLStencilElement {
+    }
+    var HTMLMyThirdComponentElement: {
+        prototype: HTMLMyThirdComponentElement;
+        new (): HTMLMyThirdComponentElement;
+    };
     interface HTMLElementTagNameMap {
         "component-without-tw-classes": HTMLComponentWithoutTwClassesElement;
         "my-component": HTMLMyComponentElement;
         "my-page": HTMLMyPageElement;
+        "my-second-component": HTMLMySecondComponentElement;
+        "my-third-component": HTMLMyThirdComponentElement;
     }
 }
 declare namespace LocalJSX {
@@ -45,10 +63,16 @@ declare namespace LocalJSX {
     }
     interface MyPage {
     }
+    interface MySecondComponent {
+    }
+    interface MyThirdComponent {
+    }
     interface IntrinsicElements {
         "component-without-tw-classes": ComponentWithoutTwClasses;
         "my-component": MyComponent;
         "my-page": MyPage;
+        "my-second-component": MySecondComponent;
+        "my-third-component": MyThirdComponent;
     }
 }
 export { LocalJSX as JSX };
@@ -58,6 +82,8 @@ declare module "@stencil/core" {
             "component-without-tw-classes": LocalJSX.ComponentWithoutTwClasses & JSXBase.HTMLAttributes<HTMLComponentWithoutTwClassesElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
             "my-page": LocalJSX.MyPage & JSXBase.HTMLAttributes<HTMLMyPageElement>;
+            "my-second-component": LocalJSX.MySecondComponent & JSXBase.HTMLAttributes<HTMLMySecondComponentElement>;
+            "my-third-component": LocalJSX.MyThirdComponent & JSXBase.HTMLAttributes<HTMLMyThirdComponentElement>;
         }
     }
 }

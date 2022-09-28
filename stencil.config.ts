@@ -5,7 +5,7 @@ import tailwind, { tailwindGlobal, tailwindHMR } from 'stencil-tailwind-plugin';
 import cfg from './tailwind.config';
 
 export const config: Config = {
-  globalStyle: 'src/theme/main.scss',
+  //   globalStyle: 'src/theme/main.scss',
   namespace: 'tailwindcss-stenciljs-example',
   outputTargets: [
     {
