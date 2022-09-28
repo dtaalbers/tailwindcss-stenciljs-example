@@ -33,11 +33,11 @@ export const config: Config = {
   plugins: [
     sass(),
     tailwindGlobal({
-      tailwindCssPath: './src/theme/main.scss',
+      //   tailwindCssPath: './src/theme/main.scss',
       tailwindConf: cfg,
     }),
     tailwind({
-      tailwindCssPath: './src/theme/main.scss',
+      //   tailwindCssPath: './src/theme/main.scss',
       tailwindConf: cfg,
     }),
     tailwindHMR(),
